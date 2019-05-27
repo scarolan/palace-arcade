@@ -24,6 +24,7 @@ module "web_app_container" {
   source              = "innovationnorway/web-app-container/azurerm"
   name                = "${var.prefix}"
   port                = "80"
+  https_only          = "false"
   resource_group_name = "${azurerm_resource_group.arcade.name}"
   container_type      = "docker"
   container_image     = "${var.image}"
