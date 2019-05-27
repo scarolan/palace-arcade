@@ -19,17 +19,22 @@ variable "https_only" {
   default = "false"
 }
 
-resource "azurerm_resource_group" "arcade" {
-  name     = "${var.prefix}-containerapp-demo"
-  location = "${var.location}"
+variable "rg_name" {
+  default = "palace-arcade-containerapp-demo"
 }
+
+# TFE and terraform 0.12 have trouble with this
+# resource "azurerm_resource_group" "arcade" {
+#   name     = "${var.prefix}-containerapp-demo"
+#   location = "${var.location}"
+# }
 
 module "web_app_container" {
   source              = "innovationnorway/web-app-container/azurerm"
   name                = "${var.prefix}"
   port                = "80"
   https_only          = "${var.https_only}"
-  resource_group_name = "${azurerm_resource_group.arcade.name}"
+  resource_group_name = "${var.rg_name}"
   container_type      = "docker"
   container_image     = "${var.image}"
 }
