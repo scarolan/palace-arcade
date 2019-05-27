@@ -10,6 +10,11 @@ variable "image" {
   default = "scarolan/pacman"
 }
 
+# Choose a location
+variable "location" {
+  default = "centralus"
+}
+
 resource "azurerm_resource_group" "arcade" {
   name     = "${var.prefix}-containerapp-demo"
   location = "${var.location}"
