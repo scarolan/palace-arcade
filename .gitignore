@@ -7,3 +7,6 @@
 
 # .tfvars files
 *.tfvars
+
+# Remote backend
+remote_backend.tf
