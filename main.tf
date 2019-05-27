@@ -26,7 +26,6 @@ module "web_app_container" {
   port                = "80"
   https_only          = "false"
   resource_group_name = "${azurerm_resource_group.arcade.name}"
-  resource_group_name = "palace-arcade-containerapp-demo"
   container_type      = "docker"
   container_image     = "${var.image}"
 }
