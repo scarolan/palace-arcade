@@ -1,4 +1,5 @@
-# Change the name pizzaplanet to your own arcade name. This becomes part of your public URL.
+# Change to your own arcade name. This becomes part of your public URL.
+# Example: http://palacearcade.azurewebsites.net/
 variable "prefix" {
   default = "palacearcade"
 }
@@ -18,6 +19,7 @@ variable "https_only" {
   default = "false"
 }
 
+# Must create this separately (for now).
 variable "rg_name" {
   default = "palace-arcade-containerapp-demo"
 }
