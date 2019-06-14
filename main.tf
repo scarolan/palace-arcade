@@ -1,13 +1,13 @@
 # Change to your own arcade name. This becomes part of your public URL.
 # Example: http://palacearcade.azurewebsites.net/
 variable "prefix" {
-  default = "pizzaplanet"
+  default = "palace-arcade"
 }
 
 # Any docker image that runs an app on port 80 will do
 # Try the scarolan/pizzaplanet image for an example change.
 variable "image" {
-  default = "scarolan/pizzaplanet"
+  default = "scarolan/palacearcade"
 }
 
 # Choose a location
