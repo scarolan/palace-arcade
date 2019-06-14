@@ -16,7 +16,7 @@ variable "location" {
 }
 
 variable "https_only" {
-  default = "false"
+  default = "true"
 }
 
 # Must create this separately (for now).
