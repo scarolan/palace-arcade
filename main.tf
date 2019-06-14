@@ -7,7 +7,7 @@ variable "prefix" {
 # Any docker image that runs an app on port 80 will do
 # Try the scarolan/pizzaplanet image for an example change.
 variable "image" {
-  default = "scarolan/palacearcade"
+  default = "scarolan/pizzaplanet"
 }
 
 # Choose a location
