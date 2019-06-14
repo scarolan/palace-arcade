@@ -32,7 +32,8 @@ variable "rg_name" {
 
 # Utilize the web_app_container module from the public registry.
 module "web_app_container" {
-  source              = "innovationnorway/web-app-container/azurerm"
+  source  = "app.terraform.io/seancarolan/web-app-container/azurerm"
+  version = "2.1.0"
   name                = "${var.prefix}"
   port                = "80"
   https_only          = "${var.https_only}"
