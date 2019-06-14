@@ -7,7 +7,7 @@ variable "prefix" {
 # Any docker image that runs an app on port 80 will do
 # Try the scarolan/pizzaplanet image for an example change.
 variable "image" {
-  default = "scarolan/pizzaplanet"
+  default = "scarolan/palacearcade"
 }
 
 # Choose a location
@@ -16,7 +16,7 @@ variable "location" {
 }
 
 variable "https_only" {
-  default = "true"
+  default = "false"
 }
 
 # Must create this separately (for now).
