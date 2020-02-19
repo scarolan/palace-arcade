@@ -19,26 +19,21 @@ variable "https_only" {
   default = "false"
 }
 
-# Must create this separately (for now).
-variable "rg_name" {
-  default = "palace-arcade-containerapp-demo"
-}
-
 resource "azurerm_resource_group" "arcade" {
   name     = "${var.prefix}-containerapp-demo"
-  location = "${var.location}"
+  location = var.location
 }
 
 # Utilize the web_app_container module from the public registry.
 module "web_app_container" {
   source  = "innovationnorway/web-app-container/azurerm"
   version = "2.6.0"
-  name                = "${var.prefix}"
+  name                = var.prefix
   port                = "80"
-  https_only          = "${var.https_only}"
-  resource_group_name = "${azurerm_resource_group.arcade.name}"
+  https_only          = var.https_only
+  resource_group_name = azurerm_resource_group.arcade.name
   container_type      = "docker"
-  container_image     = "${var.image}"
+  container_image     = var.image
 }
 
 output "container_app_url" {
