@@ -24,11 +24,10 @@ variable "rg_name" {
   default = "palace-arcade-containerapp-demo"
 }
 
-# TFE and terraform 0.12 have trouble with this
-# resource "azurerm_resource_group" "arcade" {
-#   name     = "${var.prefix}-containerapp-demo"
-#   location = "${var.location}"
-# }
+resource "azurerm_resource_group" "arcade" {
+  name     = "${var.prefix}-containerapp-demo"
+  location = "${var.location}"
+}
 
 # Utilize the web_app_container module from the public registry.
 module "web_app_container" {
@@ -37,7 +36,7 @@ module "web_app_container" {
   name                = "${var.prefix}"
   port                = "80"
   https_only          = "${var.https_only}"
-  resource_group_name = "${var.rg_name}"
+  resource_group_name = "${azurerm_resource_group.arcade.name}"
   container_type      = "docker"
   container_image     = "${var.image}"
 }
