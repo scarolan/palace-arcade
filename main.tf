@@ -35,6 +35,7 @@ module "web_app_container" {
   version = "2.6.0"
   name                = var.prefix
   port                = "80"
+  sku_size            = "B1"
   https_only          = var.https_only
   resource_group_name = azurerm_resource_group.arcade.name
   container_type      = "docker"
