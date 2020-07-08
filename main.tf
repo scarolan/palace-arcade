@@ -32,7 +32,7 @@ resource "azurerm_resource_group" "arcade" {
 # Utilize the web_app_container module from the public registry.
 module "web_app_container" {
   source  = "innovationnorway/web-app-container/azurerm"
-  version = "1.5.0"
+  version = "2.6.0"
   name                = var.prefix
   port                = "80"
   https_only          = var.https_only
