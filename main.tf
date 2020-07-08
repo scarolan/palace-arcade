@@ -35,7 +35,7 @@ module "web_app_container" {
   version = "2.6.0"
   name                = var.prefix
   port                = "80"
-  plan {
+  plan  = {
       sku_size            = "D1"
     }
   https_only          = var.https_only
