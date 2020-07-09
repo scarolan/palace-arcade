@@ -1,3 +1,8 @@
+# Pin the Azure provider version
+provider "azurerm" {
+  version = "=1.44.0"
+}
+
 # Change to your own arcade name. This becomes part of your public URL.
 # Example: http://palacearcade.azurewebsites.net/
 variable "prefix" {
@@ -30,6 +35,9 @@ module "web_app_container" {
   version = "2.6.0"
   name                = var.prefix
   port                = "80"
+  plan  = {
+      sku_size            = "B1"
+    }
   https_only          = var.https_only
   resource_group_name = azurerm_resource_group.arcade.name
   container_type      = "docker"
