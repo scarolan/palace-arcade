@@ -7,10 +7,6 @@ terraform {
   }
 }
 
-provider "azurerm" {
-  version = "=1.44.0"
-}
-
 # Change to your own arcade name. This becomes part of your public URL.
 # Example: http://palacearcade.azurewebsites.net/
 variable "prefix" {
