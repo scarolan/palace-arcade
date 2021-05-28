@@ -31,6 +31,9 @@ variable "https_only" {
 resource "azurerm_resource_group" "arcade" {
   name     = "${var.prefix}-containerapp-demo"
   location = var.location
+  tags = {
+    environment = "Production"
+  }
 }
 
 # Utilize the web_app_container module from the public registry.
