@@ -33,6 +33,7 @@ resource "azurerm_resource_group" "arcade" {
   location = var.location
   tags = {
     environment = "Production"
+    DoNotDelete = "True"
   }
 }
 
