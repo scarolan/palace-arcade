@@ -28,6 +28,10 @@ variable "https_only" {
   default = "false"
 }
 
+variable "sku_size" {
+  default = "S1"
+}
+
 resource "azurerm_resource_group" "arcade" {
   name     = "${var.prefix}-containerapp-demo"
   location = var.location
@@ -44,7 +48,7 @@ module "web_app_container" {
   name                = var.prefix
   port                = "80"
   plan  = {
-      sku_size            = "B1"
+      sku_size            = var.sku_size
     }
   https_only          = var.https_only
   resource_group_name = azurerm_resource_group.arcade.name
