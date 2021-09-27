@@ -50,7 +50,7 @@ module "web_app_container" {
   resource_group_name = azurerm_resource_group.arcade.name
   container_type      = "docker"
   container_image     = var.image
-  depends_on          = azurerm_resource_group.arcade
+  depends_on          = [azurerm_resource_group.arcade]
 }
 
 output "container_app_url" {
