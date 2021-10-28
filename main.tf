@@ -1,4 +1,5 @@
 # Pin the Azure provider version
+# add a comment here
 terraform {
   required_providers {
     azurerm = {
